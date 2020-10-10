@@ -5,9 +5,9 @@ from PIL import Image
 from aip import AipOcr
 
 
-APP_ID = '22789065'
-API_KEY = 'HbxVcKK61DzpI7n2SdxjrIsl'
-SECRET_KEY = 'FIqgzp75O66RuCmq9CGolAvNkEXXUW1E'
+APP_ID = ''
+API_KEY = ''
+SECRET_KEY = ''
 
 class baidu_ocr():
     def __init__(self, filePath):      
