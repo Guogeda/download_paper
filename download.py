@@ -185,24 +185,6 @@ def get_doi(file_name):
                 break
     return packages
 
-def test_re():
-    url = 'https://www.osapublishing.org/ol/abstract.cfm?uri=ol-44-3-618'
-    # url = 'https://iopscience.iop.org/article/10.1088/2040-8978/18/10/104001'
-    pattern = re.compile(r'https://(\S+?)/')
-
-    url = 'https://ieeexplore.ieee.org/document/328dt589/'
-    pattern = re.compile(r'document/(\S+?)/')
-    print(pattern.search(url).group(1))
-
-def sci():
-    with open('linkinghub.txt','r',encoding='utf-8')  as f:
-        cont = f.read()
-        # soup = BeautifulSoup(cont, 'lxml')
-        # pattern = re.compile(r'"linkToPdf":"(\S+?)"')
-        pattern = re.compile(r"window.location = '(\S+?)'")
-        # url_str = soup.find(name='script',attrs={'type':'application/json'})
-        print(pattern.search(str(cont)).group(1))
-        
 
 if __name__ == "__main__":
     file_name = 'LNOI.txt'
@@ -232,9 +214,7 @@ if __name__ == "__main__":
     # print(fail)
     with open('61-83_fail.txt', 'w', encoding= 'utf-8') as f :
         f.write(','.join(str(i + 56) for i in fail))
-    # print(allpapers[56 + 15]['DI'])
-    # '10.1109/JQE.1977.1069310'
-    # '[1, 15, 17, 21]'
+    
     
 
 
