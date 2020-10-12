@@ -4,7 +4,7 @@ import re
 import time
 import os
 
-import orc_selenium
+import ocr_selenium
 
 class getpaper():
     def __init__(self, doi, path=''):
@@ -64,7 +64,7 @@ class getpaper():
         self.paper_url = find_soup.find(name='meta', attrs ={'property':"og:url"})['content']
         download_url = find_soup.find(name='li', attrs={'class':'pdf-download'}).a['href']
         download_url = 'https://www.osapublishing.org/ol/' + download_url
-        download = orc_selenium.Identifica_code(download_url, self.doi, path=self.path).get_pdf(5)
+        download = ocr_selenium.Identifica_code(download_url, self.doi, path=self.path).get_pdf(5)
         
     def iop_download(self): # 小心，这个网站很小气，很容易封ip
         print(self.find_url)
